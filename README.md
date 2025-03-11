@@ -53,7 +53,34 @@ docker-compose up -d
     - `App.vue`: Main Vue component.
 
 ## Backend
+Sure, here are the packages used in the `MevnTask` project for both the frontend and backend:
 
+### Frontend
+
+- `"@nuxtjs/tailwindcss": "^6.13.1"`
+- `"@pinia/nuxt": "^0.10.1"`
+- `"@vee-validate/nuxt": "^4.15.0"`
+- `"@vee-validate/yup": "^4.15.0"`
+- `"nuxt": "^3.16.0"`
+- `"nuxt-auth-utils": "^0.5.16"`
+- `"pinia": "^3.0.1"`
+- `"vue": "^3.5.13"`,
+- `"vue-router": "^4.5.0"`
+
+### Backend
+- `"cors": "^2.8.5"`
+- `"crypto-js": "^4.2.0"`
+- `"dotenv": "^16.4.7"`
+- `"express": "^4.21.2"`
+- `"helmet": "^8.0.0"`
+- `"http-status": "^2.1.0"`
+- `"joi": "^17.13.3"`
+- `"jsonwebtoken": "^9.0.2"`
+- `"mongoose": "^8.12.1"`
+- `"uuid": "^11.1.0"`
+- `"winston": "^3.17.0"`
+
+These packages are essential for the functionality of the frontend and backend parts of the project.
 ### Installation
 
 1. Navigate to the `Backend/v1` directory:
