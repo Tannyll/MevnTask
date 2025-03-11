@@ -68,6 +68,7 @@ export const useAuthStore = defineStore('auth', {
             await navigateTo('/auth/login')
         },
         
+        
     }
 })
 

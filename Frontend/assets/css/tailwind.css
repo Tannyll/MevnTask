@@ -11,3 +11,7 @@ h1{
 }h2{
     @apply mb-5 text-lg font-semibold
 }
+ 
+ button{
+    @apply w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700
+ }

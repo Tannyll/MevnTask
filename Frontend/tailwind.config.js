@@ -7,9 +7,15 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+    },
+  },
   theme: {
     extend: {},
   },
   plugins: [],
 }
+
 

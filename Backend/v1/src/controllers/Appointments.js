@@ -1,15 +1,15 @@
 const {listFunc, insertFunc, updateFunc} = require("../services/Appointments");
 const logger = require("../scripts/logger/Appointments");
-const ApiError = require("../../errors/ApiError");
+const ApiError = require("../errors/ApiError");
 
 const create = (req, res, next) => {
     req.body.user_id = req.user;
     insertFunc(req.body).then((result) => {
         logger.info({level: 'info', message: result});
-        if (!result) return next(new ApiError({message: 'Record is not found'}));
+        if (!result) return next(new ApiError.notFound());
         res.status(201).send(result);
     }).catch((err) => {
-        next(new ApiError((err?.message)))
+        next(new ApiError.internalError({message: err?.message}))
     });
 }
 
@@ -22,7 +22,7 @@ const update = (req, res, next) => {
         if (!result) return next(new ApiError("Id bulunamadı"));
         res.status(201).send(result);
     }).catch((err) => {
-        next(new ApiError((err?.message)))
+        next(new ApiError.internalError({message: err?.message}))
     });
 }
 
@@ -33,7 +33,7 @@ const index = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError((err?.message)))
+            next(new ApiError.internalError({message: err?.message}))
         });
 }
 
@@ -47,7 +47,7 @@ const myAppointment = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError((err?.message)))
+            next(new ApiError.internalError({message: err?.message}))
         });
 }
 
@@ -57,7 +57,7 @@ const search = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError((err?.message)))
+            next(new ApiError.internalError({message: err?.message}))
         });
 }
 
@@ -96,7 +96,7 @@ const slots = (req, res, next) => {
             res.status(200).send(available)
         })
         .catch((err) => {
-            next(new ApiError((err?.message)))
+            next(new ApiError.internalError({message: err?.message}))
         });
 }
 

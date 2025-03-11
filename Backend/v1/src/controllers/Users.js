@@ -2,7 +2,7 @@ const uuid = require("uuid");
 const {listFunc, insertFunc, loginUserFunc, resetPasswordFunc} = require("../services/Users");
 const {passwdToHash, generateAccessToken, generateRefreshToken} = require("../utils/helper");
 const logger = require("../scripts/logger/Appointments");
-const ApiError = require("../../errors/ApiError");
+const ApiError = require("../errors/ApiError");
 
 const create = (req, res, next) => {
     req.body.password = passwdToHash(req.body.password);
@@ -11,7 +11,7 @@ const create = (req, res, next) => {
         .then((result) => {
             res.status(201).send(result);
         }).catch((err) => {
-        next(new ApiError((err?.message)))
+        next(new ApiError.internalError({message: err?.message}))
     });
 }
 
@@ -26,7 +26,7 @@ const resetPassword = (req, res, next) => {
             // 
             res.status(200).send(result)
         }).catch((err) => {
-        next(new ApiError((err?.message)))
+        next(new ApiError.internalError({message: err?.message}))
     });
 }
 const login = (req, res, next) => {
@@ -48,7 +48,7 @@ const login = (req, res, next) => {
         res.status(200).send(usr)
     }).catch((err) => {
         console.log(err)
-        next(new ApiError((err?.message)))
+        next(new ApiError.internalError({message: err?.message}))
     });
 }
 
@@ -58,7 +58,7 @@ const index = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError((err?.message)))
+            next(new ApiError.internalError({message: err?.message}))
         });
 }
 

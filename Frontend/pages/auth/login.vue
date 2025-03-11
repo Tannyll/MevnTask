@@ -31,7 +31,7 @@ async function login() {
 <template>
   
   <form @submit.prevent="login">
-    <div class="mb-4">
+    <div class="flex flex-col mb-4 gap-1">
       <label class="block mb-2">Email</label>
       <input
           v-model="email"
@@ -53,7 +53,6 @@ async function login() {
 
     <button
         type="submit"
-        class="w-full px-4 py-2 bg-blue-500 text-white rounded"
         :disabled="loading"
     >
       {{ loading ? 'Loading...' : 'Login' }}
