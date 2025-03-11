@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav li{
+    @apply hover:caret-yellow-400 border-cyan-300 rounded-sm text-sm font-semibold leading-tight;
+}
+
+h1{
+    @apply text-2xl font-bold
+}h2{
+    @apply mb-5 text-lg font-semibold
+}

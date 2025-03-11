@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "8b201d92-dec1-4ab5-8980-981f578ddc09",
+		"name": "Mevn Test Case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1463895"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"email\":\"serdar@emirci.com\",\n        \"password\":\"passw0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\":\"Serdar\",\n    \"email\": \"bbb@emirci.com\",\n    \"password\": \"passw0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\":\"Serdar\",\n    \"email\": \"serdar@emirci.com\",\n    \"password\": \"passw0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myAppointment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/myAppointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"myAppointments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "slots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/slots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2025-03-05\",\r\n    \"time\":\"15:30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"2025-03-05\",\n    \"time\": \"15:30\",\n    \"name\": \"Nicolas Emirci\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"date\": \"2025-03-05T13:30:39.404Z\",\n        \"time\": \"2025-03-05T12:30:13.120Z\",\n        \"name\": \"Nicolas Nesssolssdfsfdsfsdf\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/67cc3d9cff463ed9d4999f59",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"67cc3d9cff463ed9d4999f59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Date\": \"2025-12-01T22:21:39.404Z\",\n    \"Time\": \"2025-10-20T19:07:13.120Z\",\n    \"Name\": \"Nicolas Hickle\",\n    \"Description\": \"Adduco ars crustulum. Pauci adicio cresco cras nulla decretum verus caecus accusantium velut. Auditor cumque omnis abstergo acerbitas.\\nAngelus comitatus sumo crur celer repellat apostolus bos dedecor. Adficio amplexus urbanus abscido corpus summisse artificiose turbo. Vulgaris ustulo brevis arca sollicito aqua.\\nSublime varius bene. Summisse coruscus theca cibo consequuntur cohaero nulla. Volaticus una repudiandae arto sopor voluptatem condico solvo ab.\",\n    \"_id\": \"67c9b5a9c7c0683891162d71\",\n    \"createdAt\": \"2025-03-06T13:18:43.408Z\",\n    \"updatedAt\": \"2025-03-06T13:18:43.408Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/appointments/67cd5ef980f3658d830afdc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"appointments",
+								"67cd5ef980f3658d830afdc7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2VyZGFyQGVtaXJjaS5jb20iLCIkX18iOnsiYWN0aXZlUGF0aHMiOnsicGF0aHMiOnsiZW1haWwiOiJpbml0IiwiZnVsbE5hbWUiOiJpbml0IiwiX2lkIjoiaW5pdCIsInBhc3N3b3JkIjoiaW5pdCIsImNyZWF0ZWRBdCI6ImluaXQiLCJ1cGRhdGVkQXQiOiJpbml0In0sInN0YXRlcyI6eyJyZXF1aXJlIjp7fSwiaW5pdCI6eyJfaWQiOnRydWUsImZ1bGxOYW1lIjp0cnVlLCJlbWFpbCI6dHJ1ZSwicGFzc3dvcmQiOnRydWUsImNyZWF0ZWRBdCI6dHJ1ZSwidXBkYXRlZEF0Ijp0cnVlfX19LCJza2lwSWQiOnRydWV9LCIkaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9pZCI6IjY3Y2YzZTk1MzM1MDNlN2UzZDBiNTA2OSIsImZ1bGxOYW1lIjoiU2VyZGFyIiwiZW1haWwiOiJzZXJkYXJAZW1pcmNpLmNvbSIsInBhc3N3b3JkIjoiMWI2ZTQ0YWUwNjE2OTU3YTM5Y2I2ZTgzNDNiOTdmNTllZmQyYjE3YyIsImNyZWF0ZWRBdCI6IjIwMjUtMDMtMTBUMTk6MzM6NDEuNTAyWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDMtMTBUMTk6MzM6NDEuNTAyWiJ9LCJpYXQiOjE3NDE2MzU1OTMsImV4cCI6MTc0MjI0MDM5M30.clSpApjcfNJIsV1salkQbhZU2WvGPPlrIDS_rKxW_5o",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

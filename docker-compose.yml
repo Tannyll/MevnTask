@@ -1,0 +1,33 @@
+services:
+  frontend:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./Frontend:/app
+    ports:
+      - "5172:5172"
+    command: sh -c "npm install && npm run dev"
+
+  backend:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./Backend:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - mongo
+    env_file:
+      - ./Backend/.env.development
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
