@@ -89,7 +89,11 @@ npm run dev
 - `PUT /api/appointments/:id`: Update an appointment.
 - `GET /api/appointments/slots`: Fetch available slots.
 - `POST /api/appointments/search`: Search for appointments.
-- `POSTMAN Collection`: [Download](Mevn Test Case.postman_collection.json)
+- `GET /api/appointments/myAppointments`: My appointments list.
+- `POST /api/users/login`: Login user and generate JWT.
+- `POST /api/users/register`: Register a new user.
+- `POST /api/users/resetPassword`: reset password.
+- `POSTMAN Collection`: [Download](https://github.com/Tannyll/MevnTask/blob/main/Mevn%20Test%20Case.postman_collection.json
 ## License
 
 This project is licensed under the MIT License.
