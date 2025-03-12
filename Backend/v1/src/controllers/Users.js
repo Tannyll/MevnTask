@@ -11,7 +11,7 @@ const create = (req, res, next) => {
         .then((result) => {
             res.status(201).send(result);
         }).catch((err) => {
-        next(new ApiError.internalError({message: err?.message}))
+            next(ApiError.internalError(err))
     });
 }
 
@@ -26,7 +26,7 @@ const resetPassword = (req, res, next) => {
             // 
             res.status(200).send(result)
         }).catch((err) => {
-        next(new ApiError.internalError({message: err?.message}))
+        next(ApiError.internalError(err))
     });
 }
 const login = (req, res, next) => {
@@ -34,6 +34,7 @@ const login = (req, res, next) => {
     console.log("login")
     loginUserFunc(req.body).then((usr) => {
         //if (!usr) return res.status(400).send({message: "User not found"})
+     
         usr = {
             ...usr.toObject(),
             token: {
@@ -48,7 +49,7 @@ const login = (req, res, next) => {
         res.status(200).send(usr)
     }).catch((err) => {
         console.log(err)
-        next(new ApiError.internalError({message: err?.message}))
+        next(ApiError.internalError(err))
     });
 }
 
@@ -58,7 +59,7 @@ const index = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError.internalError({message: err?.message}))
+            next(ApiError.internalError(err))
         });
 }
 

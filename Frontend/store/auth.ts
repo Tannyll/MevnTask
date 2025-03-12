@@ -55,7 +55,6 @@ export const useAuthStore = defineStore('auth', {
                 
                 this.setUser(data.value as User);
                 this.setToken(data.value?.token.accessToken as string)
-                
                 return true
             } catch (error) {
                 console.error('Login error:', error)
@@ -66,6 +65,11 @@ export const useAuthStore = defineStore('auth', {
         async logout() {
             this.clearAuth()
             await navigateTo('/auth/login')
+        },
+
+        async register() {
+            this.clearAuth()
+            await navigateTo('/auth/register')
         },
         
         

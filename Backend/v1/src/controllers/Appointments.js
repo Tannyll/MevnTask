@@ -6,10 +6,11 @@ const create = (req, res, next) => {
     req.body.user_id = req.user;
     insertFunc(req.body).then((result) => {
         logger.info({level: 'info', message: result});
-        if (!result) return next(new ApiError.notFound());
+        console.log(result)
+        if (!result) return next(ApiError.notFound());
         res.status(201).send(result);
     }).catch((err) => {
-        next(new ApiError.internalError({message: err?.message}))
+        next(ApiError.internalError(err))
     });
 }
 
@@ -19,10 +20,10 @@ const update = (req, res, next) => {
 
     updateFunc(req.body, req.params.id).then((result) => {
         logger.info({level: 'info', message: result});
-        if (!result) return next(new ApiError("Id bulunamadı"));
+        if (!result) return next(ApiError.notFound("Record not found"));
         res.status(201).send(result);
     }).catch((err) => {
-        next(new ApiError.internalError({message: err?.message}))
+        next(ApiError.internalError(err))
     });
 }
 
@@ -33,7 +34,7 @@ const index = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError.internalError({message: err?.message}))
+            next(ApiError.internalError(err))
         });
 }
 
@@ -42,12 +43,12 @@ const myAppointment = (req, res, next) => {
 
     listFunc({user_id: req.user?._id})
         .then(result => {
-            if (!result) return next(new ApiError.notFound());
+            if (!result) return next(ApiError.notFound("Record not found"));
 
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError.internalError({message: err?.message}))
+            next(ApiError.internalError(err))
         });
 }
 
@@ -57,7 +58,7 @@ const search = (req, res, next) => {
             res.status(200).send(result)
         })
         .catch((err) => {
-            next(new ApiError.internalError({message: err?.message}))
+            next(ApiError.internalError(err))
         });
 }
 
@@ -96,7 +97,7 @@ const slots = (req, res, next) => {
             res.status(200).send(available)
         })
         .catch((err) => {
-            next(new ApiError.internalError({message: err?.message}))
+            next(ApiError.internalError(err))
         });
 }
 

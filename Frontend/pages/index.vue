@@ -6,9 +6,17 @@
       <h2 v-if="authStore.user">{{ authStore?.user?.email }}</h2>
 
     </div>
+    <div>
+      <div v-if="authStore.user">
+        <button @click="authStore.logout()">Logout</button>
+      </div>
+      <div v-else class="flex flex-col justify-center items-center w-full justify-between bg-white gap-3">
+        <button @click="authStore.logout()">Login</button>
+        <button class="divide-red-300" @click="authStore.register()">Register</button>
+      </div>
 
-    <button v-if="authStore.user" @click="authStore.logout()">Logout</button>
-    <button v-else @click="authStore.logout()">Login</button>
+    </div>
+
   </div>
 </template>
 
